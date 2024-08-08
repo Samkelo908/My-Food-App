@@ -1,0 +1,24 @@
+﻿<Page x:Class="Receipts.FilterRecipesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="FilterRecipesPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="209*"/>
+            <RowDefinition Height="200*"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.RowSpan="3">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="/90.jpg"/>
+            </StackPanel.Background>
+            <TextBox Name="IngredientTextBox" Width="200" Margin="10" Text="Enter ingredient"
+                     GotFocus="IngredientTextBox_GotFocus" LostFocus="IngredientTextBox_LostFocus" TextChanged="IngredientTextBox_TextChanged"/>
+            <ComboBox Name="FoodGroupComboBox" Width="200" Margin="10" SelectionChanged="FoodGroupComboBox_SelectionChanged"/>
+            <TextBox Name="MaxCaloriesTextBox" Width="200" Margin="10" Text="Enter max calories"
+                     GotFocus="MaxCaloriesTextBox_GotFocus" LostFocus="MaxCaloriesTextBox_LostFocus" TextChanged="MaxCaloriesTextBox_TextChanged"/>
+            <Button Name="FilterButton" Content="🔍 Filter" Width="126" Margin="10" Click="FilterButton_Click" Height="25" Background="#FFD61313"/>
+            <ListBox Name="FilteredRecipesListBox" Width="400" Height="200" Margin="10" DisplayMemberPath="Name"/>
+        </StackPanel>
+    </Grid>
+</Page>

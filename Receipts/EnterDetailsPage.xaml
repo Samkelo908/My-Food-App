@@ -1,0 +1,133 @@
+﻿<Page x:Class="Receipts.EnterDetailsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Enter Details">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/background1.jpg"/>
+        </Grid.Background>
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Height="166" Width="135">
+
+            <Button Content="📜 Display Recipes" Click="NavigateToDisplayRecipesPage_Click" Background="#FF8CD12D" Foreground="White" FontWeight="Bold" Width="120" Height="40" Margin="0,0,0,20">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Button Content="⚖️ Scale Recipe" Click="NavigateToScaleRecipePage_Click" Background="#FFFFD700" Foreground="White" FontWeight="Bold" Width="119" Height="40" Margin="0,0,0,20">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Button Content="🔄 Reset Quantities" Click="NavigateToResetQuantitiesPage_Click" Background="#FFEB6123" Foreground="White" FontWeight="Bold" Width="121" Height="40" Margin="0,0,0,20">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,10,0,0" Width="400">
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                <Label Content="Recipe Name:" Width="150" FontWeight="Bold" FontStyle="Italic" FontSize="14">
+                    <Label.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Label.Background>
+                </Label>
+                <TextBox x:Name="RecipeNameTextBox" Width="200"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                <Label Content="Ingredient Name:" Width="150" FontWeight="Bold" FontStyle="Italic" FontSize="14">
+                    <Label.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Label.Background>
+                </Label>
+                <TextBox x:Name="IngredientNameTextBox" Width="200" TextChanged="IngredientNameTextBox_TextChanged"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                <Label Content="Calories:" Width="150" FontWeight="Bold" FontStyle="Italic" FontSize="14">
+                    <Label.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Label.Background>
+                </Label>
+                <TextBox x:Name="CaloriesTextBox" Width="200"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                <Label Content="Food Group:" Width="150" FontWeight="Bold" FontStyle="Italic" FontSize="14">
+                    <Label.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Label.Background>
+                </Label>
+                <ComboBox x:Name="FoodGroupComboBox" Width="200">
+                    <!-- Dynamically populate ComboBox -->
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                <Label Content="Unit of Measurement:" Width="150" FontWeight="Bold" FontStyle="Italic" FontSize="14">
+                    <Label.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Label.Background>
+                </Label>
+                <ComboBox x:Name="UnitComboBox" Width="200">
+                    <ComboBoxItem Content="Grams"/>
+                    <ComboBoxItem Content="Kilograms"/>
+                    <ComboBoxItem Content="Ounces"/>
+                    <ComboBoxItem Content="Pounds"/>
+                    <ComboBoxItem Content="Liters"/>
+                    <ComboBoxItem Content="Milliliters"/>
+                    <ComboBoxItem Content="Cups"/>
+                    <ComboBoxItem Content="Teaspoons"/>
+                    <ComboBoxItem Content="Tablespoons"/>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                <Label Content="Steps:" Width="150" FontWeight="Bold" FontStyle="Italic" FontSize="14">
+                    <Label.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Label.Background>
+                </Label>
+                <TextBox x:Name="StepsTextBox" Width="200"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <Button Content="➕ Add Recipe" Click="AddRecipeButton_Click" Margin="0,0,10,0" Background="#FF1426B7" Foreground="White" FontFamily="Bahnschrift SemiBold" FontWeight="Bold" FontStyle="Italic" Width="130" Height="40">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                </Button>
+                <Button Content="🍲 Add Ingredient" Click="AddIngredientButton_Click" Margin="0,0,10,0" Background="#FF1022B7" Foreground="White" FontFamily="Bahnschrift SemiBold" FontWeight="Bold" FontStyle="Italic" Width="130" Height="40">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                </Button>
+                <Button Content="📝 Add Step" Click="AddStepButton_Click" Background="#FF1428CC" Foreground="White" FontFamily="Bahnschrift SemiBold" FontWeight="Bold" FontStyle="Italic" Width="130" Height="40">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="600,10,0,0">
+            <ListBox x:Name="RecipeListBox" Width="200" Margin="0,0,0,10" SelectionChanged="RecipeListBox_SelectionChanged"/>
+            <ListBox x:Name="IngredientListBox" Width="200" Margin="0,10,0,0"/>
+            <Label x:Name="TotalCaloriesLabel" Content="Total Calories: 0" Margin="0,20,0,0" FontWeight="Bold" FontStyle="Italic" FontSize="14" Background="#FFEADCDC"/>
+        </StackPanel>
+    </Grid>
+</Page>
